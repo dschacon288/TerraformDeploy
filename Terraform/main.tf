@@ -82,7 +82,7 @@ resource "aws_db_instance" "rds_postgres" {
   instance_class       = "db.t3.micro"
   db_name              = "mydatabase"
   username             = "harrypotter"
-  password             = "MySecurePassword123" # Cámbiala por una contraseña segura
+  password             = var.db_password # Uso de la variable
   publicly_accessible  = true
   skip_final_snapshot  = true
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
